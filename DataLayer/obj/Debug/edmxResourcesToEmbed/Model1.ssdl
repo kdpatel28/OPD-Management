@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OPDManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OPDManagement.dbo.AvaibilityMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AvaibilityMaster">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AvaibilitySlot" Type="varchar" MaxLength="20" />
+    <Property Name="DoctorId" Type="int" />
+    <Property Name="Doctor1" Type="varchar(max)" />
+    <Property Name="Doctor2" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="DoctorMaster">
+    <Key>
+      <PropertyRef Name="DoctorCode" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DoctorCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DoctorName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OPDManagement">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferenceNo" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="DoctorId" Type="int" />
+    <Property Name="DoctorCode" Type="varchar" MaxLength="10" />
+    <Property Name="AppointmentDate" Type="datetime" />
+    <Property Name="AvaibilityMasterId" Type="int" />
+    <Property Name="AppointmentTime" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="varchar" MaxLength="10" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="AllergyDetail" Type="varchar(max)" />
+    <Property Name="Casedetail" Type="varchar(max)" />
+    <Property Name="PreviousPrescreption" Type="nvarchar" MaxLength="200" />
+    <Property Name="CaseImage" Type="nvarchar" MaxLength="200" />
+    <Property Name="Treated" Type="varchar" MaxLength="10" />
+    <Property Name="DoctorFeedback" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="OPDManagementModelStoreContainer">
+    <EntitySet Name="DoctorMaster" EntityType="Self.DoctorMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPDManagement" EntityType="Self.OPDManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvaibilityMaster" EntityType="Self.AvaibilityMaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AvaibilityMaster].[SerialNo] AS [SerialNo], 
+    [AvaibilityMaster].[AvaibilitySlot] AS [AvaibilitySlot], 
+    [AvaibilityMaster].[DoctorId] AS [DoctorId], 
+    [AvaibilityMaster].[Doctor1] AS [Doctor1], 
+    [AvaibilityMaster].[Doctor2] AS [Doctor2]
+    FROM [dbo].[AvaibilityMaster] AS [AvaibilityMaster]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

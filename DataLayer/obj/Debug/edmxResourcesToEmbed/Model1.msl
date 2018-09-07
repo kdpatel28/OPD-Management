@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OPDManagementModelStoreContainer" CdmEntityContainer="OPDManagementEntities">
+    <EntitySetMapping Name="DoctorMasters">
+      <EntityTypeMapping TypeName="OPDManagementModel.DoctorMaster">
+        <MappingFragment StoreEntitySet="DoctorMaster">
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvaibilityMasters">
+      <EntityTypeMapping TypeName="OPDManagementModel.AvaibilityMaster">
+        <MappingFragment StoreEntitySet="AvaibilityMaster">
+          <ScalarProperty Name="Doctor2" ColumnName="Doctor2" />
+          <ScalarProperty Name="Doctor1" ColumnName="Doctor1" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="AvaibilitySlot" ColumnName="AvaibilitySlot" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPDManagements">
+      <EntityTypeMapping TypeName="OPDManagementModel.OPDManagement">
+        <MappingFragment StoreEntitySet="OPDManagement">
+          <ScalarProperty Name="DoctorFeedback" ColumnName="DoctorFeedback" />
+          <ScalarProperty Name="Treated" ColumnName="Treated" />
+          <ScalarProperty Name="CaseImage" ColumnName="CaseImage" />
+          <ScalarProperty Name="PreviousPrescreption" ColumnName="PreviousPrescreption" />
+          <ScalarProperty Name="Casedetail" ColumnName="Casedetail" />
+          <ScalarProperty Name="AllergyDetail" ColumnName="AllergyDetail" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="AppointmentTime" ColumnName="AppointmentTime" />
+          <ScalarProperty Name="AvaibilityMasterId" ColumnName="AvaibilityMasterId" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
